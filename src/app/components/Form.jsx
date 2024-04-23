@@ -1,6 +1,6 @@
 import React from "react";
 
-function Form() {
+export function Form() {
   return (
     <form className="flex flex-col items-center">
       <label htmlFor="websiteUrl" className="text-orange-700 mb-2">
