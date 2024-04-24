@@ -10,11 +10,22 @@ export default async function ResultPage({ searchParams }) {
   const data = await response.json();
   console.log(response);
   return (
-    <main>
-      <h1>Report for {data.url}</h1>
-      <p>{data.description}</p>
-      <p>Found {data.violations.length} issues</p>
-      <Image alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} />
+    <main className="bg-brand-beige-10 flex flex-col items-center justify-center h-screen">
+      <h1 className="text-brand-orange-70">Report for {data.url}</h1>
+      <p className="text-brand-orange-70">{data.description}</p>
+      <p className="text-brand-orange-70">Found {data.violations.length} issues</p>
+      <p className="text-brand-orange-70"> Found {data.incomplete.length} incomplete issues</p>
+      <p className="text-brand-orange-70"> Found {data.tags}</p>
+      <Image
+        alt={data.url}
+        src={data.screenshot.url}
+        width={data.screenshot.width}
+        height={data.screenshot.height}
+        className="w-full md:w-1/2 xl:w-[600px]"
+        sizes="(max-width: 768px) 100vw,
+         (max-width: 1280px) 50vw,
+         600px"
+      />
     </main>
   );
 }
