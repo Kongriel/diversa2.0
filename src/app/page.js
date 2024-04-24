@@ -18,3 +18,20 @@ export default function Page() {
     </main>
   );
 }
+
+import { Libre_Baskerville } from 'next/font/google'
+ 
+// If loading a variable font, you don't need to specify the font weight
+const libreBaskerville = Libre_Baskerville({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: "700"
+})
+ 
+export function RootLayout({ children }) {
+  return (
+    <html lang="en" className={libreBaskerville.className}>
+      <body>{children}</body>
+    </html>
+  )
+}

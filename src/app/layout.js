@@ -1,26 +1,16 @@
-import { Poppins, LibreBaskerville } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
+import { GoogleFonts } from "next-google-fonts";
 
-const poppins = Poppins({
-  variants: {
-    regular: { fontWeight: 400 },
-    '500': { fontWeight: 500 }, // Adjust this according to the available font weight
-    '700': { fontWeight: 700 }, // Adjust this according to the available font weight
-  },
-  subsets: ['latin'],
-  display: 'swap',
-});
 
-const libreBaskerville = LibreBaskerville({
-  variants: {
-    regular: { fontWeight: 400 },
-    italic: { fontWeight: 400 }, // Adjust this according to the available font weight
-    '700': { fontWeight: 700 }, // Adjust this according to the available font weight
-  },
-  subsets: ['latin'],
-  display: 'swap',
-});
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <GoogleFonts href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Libre+Baskerville:wght@400;700&display=swap" />
+      <Component {...pageProps} />
+    </>
+  );
+}
 
 export const metadata = {
   title: "Create Next App",
@@ -30,7 +20,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html className="bg-brand-beige-10" lang="en">
-      <body style={{ fontFamily: "'Poppins', sans-serif" }}>
+      <body style={{ fontFamily: "Poppins, sans-serif" }}>
         <Header />
         {children}
       </body>
