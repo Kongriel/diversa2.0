@@ -1,13 +1,8 @@
 import React from 'react';
-import { useRouter } from 'next/router';
 
-const RuleDescription = () => {
-  const router = useRouter();
-  const { ruleId } = router.query;
-
-  // fetch rule desciption based on the ruleID
+const RuleDescription = ({ ruleId }) => {
+  // Fetch rule description based on the ruleID
   // For demo purposes, we're just displaying a static description here
-
   const ruleDescription = `Description for Rule ${ruleId}`;
 
   return (
@@ -19,8 +14,3 @@ const RuleDescription = () => {
 };
 
 export default RuleDescription;
-
-//Import useRouter hook giver adging til route information
-// const router = useRouter(); - initialiserer useRouter hooke for at få adgang til router object.
-
-// const { ruleId } = router.query; - dekonstrukter 
