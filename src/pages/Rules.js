@@ -4,6 +4,7 @@ import Link from "next/link";
 const Rules = () => {
   return (
     <>
+<<<<<<< HEAD:src/app/Rules.js
       <h1>Rule overview</h1>
       <ol>
         <li>
@@ -23,6 +24,18 @@ const Rules = () => {
           <Link to="/rules/4">Regl 4</Link>
         </li>
       </ol>
+=======
+    <h1>Rule overview</h1>
+    <ol>
+        {/* <li> <Link to="/rules/1">Regl 1</Link></li>
+        <li> <Link to="/rules/2">Regl 2</Link></li>
+        <li> <Link to="/rules/3">Regl 3</Link></li>
+        <li> <Link to="/rules/4">Regl 4</Link></li> */}
+        <li>regl</li>
+        <li>regl</li>
+        <li>regl</li>
+    </ol>
+>>>>>>> 41fddda0fae27f1eabb95cb84cd2da06653b0245:src/pages/Rules.js
     </>
   );
 };

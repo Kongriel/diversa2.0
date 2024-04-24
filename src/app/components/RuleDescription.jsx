@@ -19,3 +19,8 @@ const RuleDescription = () => {
 };
 
 export default RuleDescription;
+
+//Import useRouter hook giver adging til route information
+// const router = useRouter(); - initialiserer useRouter hooke for at få adgang til router object.
+
+// const { ruleId } = router.query; - dekonstrukter 
