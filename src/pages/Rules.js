@@ -6,10 +6,13 @@ const Rules = () => {
     <>
     <h1>Rule overview</h1>
     <ol>
-        <li> <Link to="/rules/1">Regl 1</Link></li>
+        {/* <li> <Link to="/rules/1">Regl 1</Link></li>
         <li> <Link to="/rules/2">Regl 2</Link></li>
         <li> <Link to="/rules/3">Regl 3</Link></li>
-        <li> <Link to="/rules/4">Regl 4</Link></li>
+        <li> <Link to="/rules/4">Regl 4</Link></li> */}
+        <li>regl</li>
+        <li>regl</li>
+        <li>regl</li>
     </ol>
     </>
   )
