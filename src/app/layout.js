@@ -3,13 +3,21 @@ import "./globals.css";
 import Header from "./components/Header";
 
 const poppins = Poppins({
-  variants: ["regular", "400", "500", "600", "700", "800", "900"],
+  variants: {
+    regular: { fontWeight: 400 },
+    '500': { fontWeight: 500 }, // Adjust this according to the available font weight
+    '700': { fontWeight: 700 }, // Adjust this according to the available font weight
+  },
   subsets: ['latin'],
   display: 'swap',
 });
 
 const libreBaskerville = LibreBaskerville({
-  variants: ["regular", "italic", "700"],
+  variants: {
+    regular: { fontWeight: 400 },
+    italic: { fontWeight: 400 }, // Adjust this according to the available font weight
+    '700': { fontWeight: 700 }, // Adjust this according to the available font weight
+  },
   subsets: ['latin'],
   display: 'swap',
 });
