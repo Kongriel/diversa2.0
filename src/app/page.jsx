@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default async function Page() {
   return (
-    <main className="bg-brand-beige-10 flex flex-col items-center justify-center h-screen">
+    <main className="bg-brand-beige-10 flex flex-col items-center justify-center ">
       <div className="text-center">
         <h1 className="text-brand-orange-70"> Test din Side</h1>
         <p className="text-brand-orange-70">blablbalbla</p>
