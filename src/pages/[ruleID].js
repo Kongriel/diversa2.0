@@ -1,6 +1,6 @@
-import React from 'react';
-import { useRouter } from 'next/router';
-import RuleDescription from '../../app/components/RuleDescription';
+import React from "react";
+import { useRouter } from "next/router";
+import RuleDescription from "./app/components/RuleDescription";
 
 const RulePage = () => {
   const router = useRouter();
