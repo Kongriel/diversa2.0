@@ -97,8 +97,22 @@ export default async function ResultPage({ searchParams }) {
   const violations = data.violations;
   const violationsCount = violations.length;
   const incompleteCount = data.incomplete.length;
-
-  let score = 100 - violationsCount * 10;
+  let score = 100;
+  violations.forEach((violation) => {
+    switch (violation.impact) {
+      case "critical":
+        score -= 20; // Reduce score by 20 for critical impact
+        break;
+      case "serious":
+        score -= 15; // Reduce score by 15 for serious impact
+        break;
+      case "moderate":
+        score -= 10; // Reduce score by 10 for moderate impact
+        break;
+      default:
+        score -= 5; // Reduce score by 5 for minor impact (or any other level)
+    }
+  });
   score = Math.min(score, 100);
   score = Math.max(score, 0);
 
