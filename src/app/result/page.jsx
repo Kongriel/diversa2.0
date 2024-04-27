@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+// Adjusted to 180 degrees
+
 const CircleProgressBar = ({ percentage }) => {
   const fillDegree = (percentage / 100) * 180; // Adjusted to 180 degrees
 
@@ -52,7 +54,7 @@ const CircleProgressBar = ({ percentage }) => {
     .mask.full,
     .circle .fill {
       animation: fill ease-in-out 1s;
-      transform: rotate(${fillDegree}deg); /* Apply the transform here */
+      transform: rotate(${fillDegree}deg);
     }
 
     @keyframes fill {
@@ -92,22 +94,37 @@ export default async function ResultPage({ searchParams }) {
   const data = await response.json();
   console.log(response);
 
-  const violationsCount = data.violations.length;
+  const violations = data.violations;
+  const violationsCount = violations.length;
   const incompleteCount = data.incomplete.length;
 
   let score = 100 - violationsCount * 10;
-
-  score = Math.min(score, 97);
-
+  score = Math.min(score, 100);
   score = Math.max(score, 0);
 
   return (
-    <main className="bg-brand-beige-10 flex flex-col items-center justify-center h-screen">
-      <h1 className="text-brand-orange-70">Report for {data.url}</h1>
-      <p className="text-brand-orange-70">{data.description}</p>
-      <p className="text-brand-orange-70">Found {violationsCount} issues</p>
-      <p className="text-brand-orange-70">Found {incompleteCount} incomplete issues</p>
-      <p className="text-brand-orange-70">Found {data.tags}</p>
+    <main className="bg-brand-beige-10 flex flex-col items-center justify-center ">
+      <div className="text-center">
+        <h1 className="text-brand-orange-70">Accessibility Report for {data.url}</h1>
+        <p className="text-brand-orange-70">{data.description}</p>
+        <p className="text-brand-orange-70">Accessibility Breaches: {violationsCount}</p>
+        <p className="text-brand-orange-70">Incomplete Items Detected: {incompleteCount}</p>
+        <p className="text-brand-orange-70">Assessed Tags: {data.tags.join(", ")}</p>
+        {violations.map((violation, index) => (
+          <div key={index} className="text-left border border-gray-300 p-4 my-4 rounded-md">
+            <h2 className="text-xl font-semibold text-gray-800">{violation.id}</h2>
+            <p className="text-gray-600">{violation.description}</p>
+            <p className="text-gray-600">Impact: {violation.impact}</p>
+            <p className="text-gray-600">Tags: {violation.tags.join(", ")}</p>
+            <p className="text-gray-600">
+              Help URL:{" "}
+              <a href={violation.helpUrl} className="text-blue-500 underline">
+                {violation.helpUrl}
+              </a>
+            </p>
+          </div>
+        ))}
+      </div>
       <CircleProgressBar percentage={score} />
       <Image
         alt={data.url}
