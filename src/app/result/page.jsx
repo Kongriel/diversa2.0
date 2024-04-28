@@ -6,7 +6,14 @@ import Image from "next/image";
 
 const CircleProgressBar = ({ percentage }) => {
   const fillDegree = (percentage / 100) * 180; // Adjusted to 180 degrees
-
+  let color;
+  if (percentage >= 89) {
+    color = "#00FF00"; // Green color for high scores (75% and above)
+  } else if (percentage >= 50) {
+    color = "orange";
+  } else {
+    color = "red";
+  }
   const fillStyles = `
     .circle-wrap {
       margin: 150px auto;
@@ -37,7 +44,7 @@ const CircleProgressBar = ({ percentage }) => {
       text-align: center;
       margin-top: 14px;
       margin-left: 14px;
-      color: #69e3fc;
+      color: ${color};
       position: absolute;
       z-index: 100;
       font-weight: 700;
@@ -48,7 +55,7 @@ const CircleProgressBar = ({ percentage }) => {
     /* 3rd progress bar */
     .mask .fill {
       clip: rect(0px, 75px, 150px, 0px);
-      background-color: #69e3fc;
+      background-color: ${color};
     }
 
     .mask.full,
@@ -97,22 +104,24 @@ export default async function ResultPage({ searchParams }) {
   const violations = data.violations;
   const violationsCount = violations.length;
   const incompleteCount = data.incomplete.length;
+
   let score = 100;
   violations.forEach((violation) => {
     switch (violation.impact) {
       case "critical":
-        score -= 20; // Reduce score by 20 for critical impact
+        score -= 20;
         break;
       case "serious":
-        score -= 15; // Reduce score by 15 for serious impact
+        score -= 15;
         break;
       case "moderate":
-        score -= 10; // Reduce score by 10 for moderate impact
+        score -= 10;
         break;
       default:
-        score -= 5; // Reduce score by 5 for minor impact (or any other level)
+        score -= 5;
     }
   });
+
   score = Math.min(score, 100);
   score = Math.max(score, 0);
 
