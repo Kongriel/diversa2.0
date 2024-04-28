@@ -133,6 +133,7 @@ export default async function ResultPage({ searchParams }) {
         <p className="text-brand-orange-70">Accessibility Breaches: {violationsCount}</p>
         <p className="text-brand-orange-70">Incomplete Items Detected: {incompleteCount}</p>
         <p className="text-brand-orange-70">Assessed Tags: {data.tags.join(", ")}</p>
+        <CircleProgressBar percentage={score} />
         {violations.map((violation, index) => (
           <div key={index} className="text-left border border-gray-300 p-4 my-4 rounded-md">
             <h2 className="text-xl font-semibold text-gray-800">{violation.id}</h2>
@@ -149,7 +150,7 @@ export default async function ResultPage({ searchParams }) {
           </div>
         ))}
       </div>
-      <CircleProgressBar percentage={score} />
+
       <Image
         alt={data.url}
         src={data.screenshot.url}

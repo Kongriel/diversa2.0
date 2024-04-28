@@ -1,11 +1,62 @@
 {
+  "landmark-banner-is-top-level": {
+    "headline": "Banner landmark should not be contained in another landmark",
+    "explanation": "Ensure each banner landmark is not contained in another landmark. For each element on the page that uses the role=banner ARIA landmark, ensure that it is not contained within another ARIA landmark, even though HTML5 allows multiple instances of the equivalent <header> landmark. It is appropriate in most web designs to have only one each of these landmarks, whether they are specified using ARIA or HTML5, and further, that they are not nested within one or more other landmarks.",
+    "notes": "Banner landmark must not be contained in another landmark."
+  },
+  "landmark-no-duplicate-banner": {
+    "headline": "Document should not have more than one banner landmark",
+    "explanation": "Ensure that individual HTML pages have only banner landmark. Decide which banner landmark you want to keep and remove any other banner landmarks. The role=banner ARIA landmark should only appear once on an element that is unique to the HTML document even though the HMTL5 specification allows multiple instances of an equivalent header landmark value. It is appropriate in most web designs to have only one banner landmark whether it is specified using ARIA or HTML5.",
+    "notes": "Ensures the page has at most one banner landmark."
+  },
+  "landmark-complementary-is-top-level": {
+    "headline": "Aside should not be contained in another landmark",
+    "explanation": "This best practice rule ensures that aside elements or elements with role=complementary are not an internal part of another ARIA landmark. Nesting landmarks create confusing document structures. This rule is similar to existing rules that test this same ARIA requirement for the banner, contentinfo, and main roles. ",
+    "notes": "Ensures the complementary landmark or aside is at top level"
+  },
+
+  "label-title-only": {
+    "headline": "Form elements should have a visible label",
+    "explanation": " Provide every form control a label using aria-label, aria-labelledby, implicit <label> or explicit <label>. Using aria-label and aria-labelledby Most of the time it is best to use standard form labels using the <label> tag. The <label> tag is by far the most useful and most widely-supported method of labeling form elements, especially among older browsers and older screen readers. There are, however, certain circumstances that require more flexible methods of labeling objects. One limitation of the <label> tag is that it can be associated with only one form element. If circumstances require a more complex labeling structure, the <label> tag is insufficient. This is where aria-label and aria-labelledby come in. ",
+    "notes": "Form <input> elements may be given a title using the title or aria-describedby attributes (but not both). These attributes are used to provide additional information such as a hint. "
+  },
+
+  "aria-dialog-name": {
+    "headline": "ARIA dialog and alertdialog nodes should have an accessible name",
+    "explanation": "",
+    "notes": "Aria dialog elements must have discernible text that clearly describes the destination, purpose, function, or action for screen reader users."
+  },
+
+  "landmark-unique": {
+    "headline": "Ensures landmarks are unique",
+    "explanation": "landmark-unique is a new best practice rule ensures that landmarks have a unique role or accessible name (i.e. role, label, title) combination.",
+
+    "notes": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination."
+  },
+  "image-redundant-alt": {
+    "headline": "Alternative text of images should not be repeated as text",
+    "explanation": "Don't put the same text in the alt attribute value for a button or link in the text adjacent to the corresponding image or link.Bad Example: For example, given the a scenario, a screen reader will announce this content to the user as Home Page Home Page",
+
+    "notes": "When button and link text repeats in a alt attribute value, screen reader users hear the same information twice, which renders the alt text meaningless and confusing."
+  },
+  "page-has-heading-one": {
+    "headline": "Page should contain a level-one heading",
+    "explanation": "Ensure that the page or at least one of its frames contains a level-one heading. Generally, it is a best practice to ensure that the beginning of a page's main content starts with a h1 element, and also to ensure that the page contains only one h1 element.",
+
+    "notes": "Ensures that the page, or at least one of its frames, contains an h1 element that appears before the start of the main content to allow screen reader users to use keyboard shortcuts to navigate the heading structure instead of wasting time listening to more of the web page to understand its structure."
+  },
+  "heading-order": {
+    "headline": "Heading levels should only increase by one",
+    "explanation": "Ensure headings are in a logical order. For example, check that all headings are marked with h1 through h6 elements and that these are ordered hierarchically. For example, the heading level following an h1 element should be an h2 element, not an h3 element. Finally, don't use heading mark up on text that isn't actually a heading.",
+    "notes": "Headings must be in a valid logical order, meaning h1 through h6 element tags must appear in a sequentially-descending order. "
+  },
   "empty-heading": {
     "headline": "Headings should not be empty",
-    "explanation": "",
-    "notes": ""
+    "explanation": "To ensure you are writing effective headings, read through the headings on the page and ask yourself if you get a general sense of the page’s contents based only on the information provided by the headings. If the answer is “no”, consider rewriting your headings.",
+    "notes": "When at least one heading element (marked by <h1> through <h6>) is present, it is a best practice to ensure it contains content."
   },
   "region": {
-    "headline": "Region Information",
+    "headline": "All page content should be contained by landmarks",
     "explanation": "Ensure all content is contained within a landmark region, designated with HTML5 landmark elements and/or ARIA landmark regions. Screen reader users can navigate to a section based on its HTML element or ARIA Landmark. For example, you might use ARIA Landmarks to provide a simple replacement for a skip navigation link, though the replacement is only useful for users of screen readers. Sighted users or people using screen enlargers won't benefit from the addition, so it's not a good practice to substitute ARIA landmarks for skip navigation links altogether. ",
     "notes": " It is best practice to contain all content excepting skip links, within distinct regions such as the header, nav, main, and footer. "
   },
