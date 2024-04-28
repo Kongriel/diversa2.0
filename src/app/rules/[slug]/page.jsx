@@ -37,7 +37,6 @@ export default function RulePage({ params }) {
       <div>
         <div>
           <h1 className="text-3xl">{headline}</h1>
-
           <h4>Forklaring: </h4>
           <p>{explanation}</p>
           <h4>Noter: </h4>

@@ -144,13 +144,10 @@ export default async function ResultPage({ searchParams }) {
             <p className="text-gray-600">{violation.description}</p>
             <p className="text-gray-600">Impact: {violation.impact}</p>
             <p className="text-gray-600">Tags: {violation.tags.join(", ")}</p>
-            <p className="text-gray-600">
-              Help URL:{" "}
-              <a href={violation.helpUrl} className="text-blue-500 underline">
-                {violation.helpUrl}
-              </a>
-              <a href={`/rules/${violation.id}`}>hej</a>
-            </p>
+            <p className="text-gray-600"> </p>
+            <a className="inline-block px-4 py-1 bg-orange-500 text-white rounded-md hover:bg-orange-600" href={`/rules/${violation.id}`}>
+              Read More
+            </a>
           </div>
         ))}
       </div>
