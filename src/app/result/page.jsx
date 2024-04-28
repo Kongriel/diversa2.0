@@ -128,12 +128,16 @@ export default async function ResultPage({ searchParams }) {
   return (
     <main className="bg-brand-beige-10 flex flex-col items-center justify-center ">
       <div className="text-center">
-        <h1 className="text-brand-orange-70">Accessibility Report for {data.url}</h1>
-        <p className="text-brand-orange-70">{data.description}</p>
-        <p className="text-brand-orange-70">Accessibility Breaches: {violationsCount}</p>
-        <p className="text-brand-orange-70">Incomplete Items Detected: {incompleteCount}</p>
-        <p className="text-brand-orange-70">Assessed Tags: {data.tags.join(", ")}</p>
-        <CircleProgressBar percentage={score} />
+        <div className="flex justify-center items-center">
+          <div>
+            <h1 className="text-brand-orange-70">Accessibility Report for {data.url}</h1>
+            <p className="text-brand-orange-70">{data.description}</p>
+            <p className="text-brand-orange-70">Accessibility Breaches: {violationsCount}</p>
+            <p className="text-brand-orange-70">Incomplete Items Detected: {incompleteCount}</p>
+            <p className="text-brand-orange-70">Assessed Tags: {data.tags.join(", ")}</p>
+          </div>
+          <CircleProgressBar percentage={score} />
+        </div>
         {violations.map((violation, index) => (
           <div key={index} className="text-left border border-gray-300 p-4 my-4 rounded-md">
             <h2 className="text-xl font-semibold text-gray-800">{violation.id}</h2>
