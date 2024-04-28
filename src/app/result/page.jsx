@@ -144,6 +144,7 @@ export default async function ResultPage({ searchParams }) {
               <a href={violation.helpUrl} className="text-blue-500 underline">
                 {violation.helpUrl}
               </a>
+              <a href={`/rules/${violation.id}`}>hej</a>
             </p>
           </div>
         ))}

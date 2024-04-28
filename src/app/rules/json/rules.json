@@ -1,0 +1,22 @@
+{
+  "empty-heading": {
+    "headline": "Headings should not be empty",
+    "explanation": "",
+    "notes": ""
+  },
+  "region": {
+    "headline": "Region Information",
+    "explanation": "Ensure all content is contained within a landmark region, designated with HTML5 landmark elements and/or ARIA landmark regions. Screen reader users can navigate to a section based on its HTML element or ARIA Landmark. For example, you might use ARIA Landmarks to provide a simple replacement for a skip navigation link, though the replacement is only useful for users of screen readers. Sighted users or people using screen enlargers won't benefit from the addition, so it's not a good practice to substitute ARIA landmarks for skip navigation links altogether. ",
+    "notes": " It is best practice to contain all content excepting skip links, within distinct regions such as the header, nav, main, and footer. "
+  },
+  "tabindex": {
+    "headline": "Tab Index",
+    "explanation": "There are two main ways to avoid using tabindex with a value greater than 0. The first method is to change the tabindex to 0. Note that this may change the order in which the user tabs through the elements. The second method is to remove the tabindex entirely and modify the structure of the page so that a user tabbing through elements reach them in the order initially desired. ",
+    "notes": "A tabindex attribute must never have a value greater than 0 to prevent an unexpected tab order that can give the appearance of skipping some elements entirely. "
+  },
+  "landmark-one-main": {
+    "headline": "Landmark one main",
+    "explanation": "Ensure there is a navigation point to the primary content of the page. If the page contains iframe elements, each iframe should contain either no main landmarks or just one. Ensure all content is contained within a landmark region, designated with HTML5 landmark elements and/or ARIA landmark regions. ",
+    "notes": "It is a best practice to ensure that there is only one main landmark to navigate to the primary content of the page and that if the page contains iframe elements, each should either contain no landmarks, or just a single landmark. "
+  }
+}
