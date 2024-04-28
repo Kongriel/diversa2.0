@@ -10,10 +10,10 @@ export default function Error() {
       <div className="text-brand-orange-70 text-center">
         <Image src="https://cdn.rawgit.com/ahmedhosna95/upload/1731955f/sad404.svg" alt="404" width={230} height={230} />
 
-        <h1 className="text-5xl font-bold my-4">404 PAGE</h1>
-        <p className="text-lg mb-2">The page you were looking for could not be found</p>
+        <h1 className="text-6xl font-libreBaskerville my-4">404 PAGE</h1>
+        <p className="text-lg font-poppins mb-2">The page you were looking for could not be found</p>
         <p className="text-lg">
-          <Link href="/" className="text-brand-orange-70 underline">
+          <Link href="/" className="text-brand-orange-70 font-poppins underline">
             .....Back to previous page
           </Link>
         </p>

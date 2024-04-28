@@ -2,13 +2,11 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-// Adjusted to 180 degrees
-
 const CircleProgressBar = ({ percentage }) => {
-  const fillDegree = (percentage / 100) * 180; // Adjusted to 180 degrees
+  const fillDegree = (percentage / 100) * 180;
   let color;
   if (percentage >= 89) {
-    color = "#00FF00"; // Green color for high scores (75% and above)
+    color = "#00FF00";
   } else if (percentage >= 50) {
     color = "orange";
   } else {
@@ -115,10 +113,10 @@ export default async function ResultPage({ searchParams }) {
         score -= 15;
         break;
       case "moderate":
-        score -= 10;
+        score -= 8;
         break;
       default:
-        score -= 5;
+        score -= 4;
     }
   });
 
@@ -130,21 +128,21 @@ export default async function ResultPage({ searchParams }) {
       <div className="text-center">
         <div className="flex justify-center items-center">
           <div>
-            <h1 className="text-brand-orange-70">Accessibility Report for {data.url}</h1>
-            <p className="text-brand-orange-70">{data.description}</p>
-            <p className="text-brand-orange-70">Accessibility Breaches: {violationsCount}</p>
-            <p className="text-brand-orange-70">Incomplete Items Detected: {incompleteCount}</p>
-            <p className="text-brand-orange-70">Assessed Tags: {data.tags.join(", ")}</p>
+            <h1 className="text-brand-orange-70 font-libreBaskerville text-2xl">Accessibility Report for {data.url}</h1>
+            <p className="text-brand-orange-70 font-poppins">{data.description}</p>
+            <p className="text-brand-orange-70 font-poppins">Accessibility Breaches: {violationsCount}</p>
+            <p className="text-brand-orange-70 font-poppins">Incomplete Items Detected: {incompleteCount}</p>
+            <p className="text-brand-orange-70 font-poppins">Assessed Tags: {data.tags.join(", ")}</p>
           </div>
           <CircleProgressBar percentage={score} />
         </div>
         {violations.map((violation, index) => (
           <div key={index} className="text-left border border-gray-300 p-4 my-4 rounded-md">
-            <h2 className="text-xl font-semibold text-gray-800">{violation.id}</h2>
-            <p className="text-gray-600">{violation.description}</p>
-            <p className="text-gray-600">Impact: {violation.impact}</p>
-            <p className="text-gray-600">Tags: {violation.tags.join(", ")}</p>
-            <p className="text-gray-600"> </p>
+            <h2 className="text-xl font-semibold font-libreBaskerville text-gray-800">{violation.id}</h2>
+            <p className="text-gray-600 font-poppins">{violation.description}</p>
+            <p className="text-gray-600 font-poppins">Impact: {violation.impact}</p>
+            <p className="text-gray-600 font-poppins">Tags: {violation.tags.join(", ")}</p>
+            <p className="text-gray-600 font-poppins"> </p>
             <a className="inline-block px-4 py-1 bg-orange-500 text-white rounded-md hover:bg-orange-600" href={`/rules/${violation.id}`}>
               Read More
             </a>
