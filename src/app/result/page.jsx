@@ -144,7 +144,8 @@ export default async function ResultPage({ searchParams }) {
       </form>
 
       <h1 className="text-brand-orange-70 font-libreBaskerville text-2xl text-center">Accessibility Report for {data.url}</h1>
-      <div className="flex flex-wrap justify-center lq:grid p-8">
+
+      <div className="flex py-0 mb-3 bg-orange-200 rounded-3xl items-center mx-8 flex-wrap justify-center p-8">
         <Image alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} className="w-full md:w-1/2 xl:w-[420px]" sizes="" />
         <CircleProgressBar percentage={score} />
         <div className="place-self-center">
@@ -154,6 +155,7 @@ export default async function ResultPage({ searchParams }) {
           <p className="text-brand-orange-70 font-poppins">Assessed Tags: {data.tags.join(", ")}</p>
         </div>
       </div>
+
       <div className="flex flex-col justify-center items-center">
         {violations.map((violation, index) => (
           <div key={index} className="border border-gray-300 p-4 my-4 rounded-md w-10/12">
