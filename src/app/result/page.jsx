@@ -110,7 +110,7 @@ export default async function ResultPage({ searchParams }) {
         score -= 20;
         break;
       case "serious":
-        score -= 15;
+        score -= 12;
         break;
       case "moderate":
         score -= 8;
@@ -146,9 +146,9 @@ export default async function ResultPage({ searchParams }) {
             <p className="text-gray-600">Tags: {violation.tags.join(", ")}</p>
 
             <div className="mt-2">
-              <a className="inline-block px-4 py-1 bg-orange-500 text-white rounded-md hover:bg-orange-600" href={`/rules/${violation.id}`}>
+              <Link className="inline-block px-4 py-1 bg-orange-500 text-white rounded-md hover:bg-orange-600" href={`/rules/${violation.id}`}>
                 Read More
-              </a>
+              </Link>
             </div>
           </div>
         ))}
