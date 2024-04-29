@@ -125,8 +125,25 @@ export default async function ResultPage({ searchParams }) {
 
   return (
     <main className="bg-brand-beige-10  items-center justify-center my-6 ">
+      <form action="" className=" flex justify-center my-6">
+        <input
+          type="url"
+          name="url"
+          id="url"
+          placeholder={data.url}
+          className="border border-gray-300 rounded-2xl  px-3 py-2 w-64 text-brand-orange-70 placeholder-orange-70 focus:outline-none focus:border-orange-500 pl-8"
+          style={{
+            backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" d="M11.445 0.055l-8.945 8.945-2.5 7 6.995-2.5 8.95-8.945c0.5-2-2.5-5-4.5-4.5zM4.5 11l-1-1 8.5-8.5 1 1-8.5 8.5z"></path></svg>')`,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "right 8px center",
+            backgroundSize: "16px",
+            paddingLeft: "30px",
+          }}
+        />
+      </form>
+
       <h1 className="text-brand-orange-70 font-libreBaskerville text-2xl text-center">Accessibility Report for {data.url}</h1>
-      <div className="flex p-9 bg-brand-beige w-11/12 justify-center rounded-lg">
+      <div className="flex flex-wrap justify-center lq:grid p-8">
         <Image alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} className="w-full md:w-1/2 xl:w-[420px]" sizes="" />
         <CircleProgressBar percentage={score} />
         <div className="place-self-center">
