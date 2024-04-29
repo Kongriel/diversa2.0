@@ -131,13 +131,14 @@ export default async function ResultPage({ searchParams }) {
           name="url"
           id="url"
           placeholder={data.url}
-          className="border border-gray-300 rounded-2xl  px-3 py-2 w-64 text-brand-orange-70 placeholder-orange-70 focus:outline-none focus:border-orange-500 pl-8"
+          className="border border-gray-300 rounded-3xl  px-3 py-2 w-64 text-brand-orange-70 placeholder-orange-70 focus:outline-none focus:border-orange-500 pl-8"
           style={{
             backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" d="M11.445 0.055l-8.945 8.945-2.5 7 6.995-2.5 8.95-8.945c0.5-2-2.5-5-4.5-4.5zM4.5 11l-1-1 8.5-8.5 1 1-8.5 8.5z"></path></svg>')`,
             backgroundRepeat: "no-repeat",
             backgroundPosition: "right 8px center",
             backgroundSize: "16px",
             paddingLeft: "30px",
+            width: "345px",
           }}
         />
       </form>
