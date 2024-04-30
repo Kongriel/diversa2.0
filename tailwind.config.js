@@ -25,6 +25,7 @@ module.exports = {
         "grey-80": "#333333",
         "grey-100": "#000000",
         "bg-farve": "#1b2dc8" /*blå*/,
+        "bg-kontrast": "#ffc66b",
 
         "farve-1": "#123456",
         "farve-2": "#abcdef",
