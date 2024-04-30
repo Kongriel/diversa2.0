@@ -124,7 +124,7 @@ export default async function ResultPage({ searchParams }) {
   score = Math.max(score, 0);
 
   return (
-    <main className="bg-farve-1  items-center justify-center my-6 ">
+    <main className="  items-center justify-center my-6 ">
       <form action="" className=" flex justify-center my-6">
         <input
           type="url"
@@ -145,7 +145,7 @@ export default async function ResultPage({ searchParams }) {
 
       <h1 className="text-brand-orange-70 font-libreBaskerville text-2xl text-center">Accessibility Report for {data.url}</h1>
 
-      <div className="flex py-0 mb-3 bg-orange-200 rounded-3xl items-center mx-8 flex-wrap justify-center p-8">
+      <div className="flex py-0 mb-3  rounded-3xl items-center mx-8 flex-wrap justify-center p-8">
         <Image alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} className="w-full md:w-1/2 xl:w-[420px]" sizes="" />
         <CircleProgressBar percentage={score} />
         <div className="place-self-center">

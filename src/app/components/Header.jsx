@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Header() {
   return (
-    <nav className="bg-yellow-600">
+    <nav className=" shadow-glass-1 rounded-lg">
       <ul className="flex justify-left items-center">
         <li className="p-3">
           <Link href={"/"}>

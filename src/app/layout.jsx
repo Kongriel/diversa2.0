@@ -8,8 +8,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html className="bg-farve-1" lang="en">
-      <body style={{ fontFamily: "Poppins, sans-serif" }}>
+    <html className="bg-custom-image bg-center bg-cover" lang="en">
+      <body className=" bg-[url(https://play.tailwindcss.com/img/grid.svg)] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,1))]" style={{ fontFamily: "Poppins, sans-serif" }}>
         <Header />
         {children}
       </body>

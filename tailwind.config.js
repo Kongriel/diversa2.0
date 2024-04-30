@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/pages/**/*.{js,ts,jsx,tsx,mdx}", "./src/components/**/*.{js,ts,jsx,tsx,mdx}", "./src/app/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
@@ -31,10 +30,15 @@ module.exports = {
         "farve-3": "#fedcba",
       },
       fontFamily: {
-        // Add custom font families here
         poppins: ["Poppins", "sans-serif"],
         libreBaskerville: ["Libre Baskerville", "serif"],
       },
+      boxShadow: {
+        "glass-1": "0 8px 32px rgba(31, 38, 117, 0.36)",
+      },
+      backgroundImage: (theme) => ({
+        "custom-image": "url('/background.jpg')", // Replace 'background.jpg' with your image path
+      }),
     },
   },
   plugins: [],

@@ -4,24 +4,23 @@ import Image from "next/image";
 
 export default async function Page() {
   return (
-    <main className="bg-farve-1 flex flex-col items-center justify-center h-screen">
-      <div className="text-center">
-        <h1 className="text-farve-text  text-5xl font-libreBaskerville">Welcome to our Diversa accessibility app</h1>
-        <h2 className="text-farve-text  text-2xl font-poppins">Ready to take the first step towards creating a more accessible web? Start your journey with Diversa today and ensure your website meets the highest standards of inclusivity.</h2>
+    <main className="flex flex-col items-center justify-center h-screen">
+      <div className="text-center px-4 py-10 mx-auto sm:w-3/4 lg:w-2/3 xl:w-2/5 sm:p-10 md:rounded">
+        <h1 className="mb-6 text-6xl font-extrabold leading-none tracking-tight text-center">Diversa Accessibility App</h1>
+        <h2 className="justify-center mx-auto text-xl font-normal leading-7 text-center  font-poppins">Ready to take the first step towards creating a more accessible web?</h2>
       </div>
 
-      <form action="/result" className="mt-4">
-        <div></div>
-        <label htmlFor="url" className="text-farve-text">
-          Indtast URL:
-        </label>
-        <input type="url" name="url" id="url" placeholder="https://www.yourwebsite.com" className="border border-gray-300 rounded-md px-3 py-2 w-64 text-farve-text placeholder-farve-text focus:outline-none focus:border-farve-text" />
-
-        <button type="submit" className="mt-2 bg-farve-text text-white py-2 px-4 rounded-md hover:bg-farve-text">
-          Resultat
-        </button>
-      </form>
-      <p className="text-farve-text  text-1xl font-poppins">By generating a comprehensive accessibility report with Diversa, you'll gain valuable insights into areas where your website excels and where improvements can be made. Our user-friendly interface and actionable recommendations make it easy for you to implement necessary changes and enhance the accessibility of your website.</p>
+      <div className="px-4 my-4 mx-auto sm:w-3/4 lg:w-2/3 xl:w-2/5 sm:p-10 md:rounded shadow-glass-1">
+        <form action="/result" className=" gap-3 py-10 flex">
+          <label htmlFor="url" className="text-farve-text sr-only">
+            Indtast URL:
+          </label>
+          <input type="url" name="url" id="url" placeholder="https://www.yourwebsite.com" className="block w-full px-5 py-3 text-base text-gray-900 placeholder-gray-500 transition-colors border  border-blue-200 rounded-md shadow-sm disabled:bg-gray-200 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-blue-600 " />
+          <button type="submit" className=" w-full px-5 py-3 text-base font-medium text-white transition-colors bg-blue-500 border border-transparent rounded-md shadow disabled:bg-blue-400 sm:w-48 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 sm:px-10 ">
+            Check
+          </button>
+        </form>
+      </div>
     </main>
   );
 }

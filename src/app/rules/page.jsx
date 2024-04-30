@@ -15,8 +15,8 @@ export default async function ResultPage({ searchParams }) {
         <div>
           <h1>REGLER</h1>
           <h2>Oversigt over de regler der testes for</h2>
-          <ol className="border border-gray-300 p-4">
-            <li className="text-blue-500 border border-gray-300 p-2">
+          <ul className="border border-gray-300 p-4">
+            <li className="">
               <Link href="rules/landmark-no-duplicate-banner">landmark-no-duplicate-banner</Link>
             </li>
             <li>
@@ -52,7 +52,7 @@ export default async function ResultPage({ searchParams }) {
             <li>
               <Link href="rules/landmark-one-main">landmark-one-main</Link>
             </li>
-          </ol>
+          </ul>
 
           <button>
             <Link href="/">Søg her</Link>
