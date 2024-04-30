@@ -6,8 +6,8 @@ export default async function Page() {
   return (
     <main className="bg-farve-1 flex flex-col items-center justify-center h-screen">
       <div className="text-center">
-        <h1 className="text-brand-orange-70  text-5xl font-libreBaskerville"> Test din Side</h1>
-        <p className="text-brand-orange-70  text-2xl font-poppins">blablbalbla</p>
+        <h1 className="text-farve-text  text-5xl font-libreBaskerville">Welcome to our Diversa accessibility app</h1>
+        <h2 className="text-farve-text  text-2xl font-poppins">Ready to take the first step towards creating a more accessible web? Start your journey with Diversa today and ensure your website meets the highest standards of inclusivity.</h2>
       </div>
 
       <form action="/result" className="mt-4">
@@ -21,7 +21,7 @@ export default async function Page() {
           Resultat
         </button>
       </form>
-      <p className="text-brand-orange-70  text-1xl font-poppins">By generating a comprehensive accessibility report with Diversa, you'll gain valuable insights into areas where your website excels and where improvements can be made. Our user-friendly interface and actionable recommendations make it easy for you to implement necessary changes and enhance the accessibility of your website.</p>
+      <p className="text-farve-text  text-1xl font-poppins">By generating a comprehensive accessibility report with Diversa, you'll gain valuable insights into areas where your website excels and where improvements can be made. Our user-friendly interface and actionable recommendations make it easy for you to implement necessary changes and enhance the accessibility of your website.</p>
     </main>
   );
 }
