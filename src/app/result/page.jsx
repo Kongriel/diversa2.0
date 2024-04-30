@@ -6,11 +6,11 @@ const CircleProgressBar = ({ percentage }) => {
   const fillDegree = (percentage / 100) * 180;
   let color;
   if (percentage >= 89) {
-    color = "#00FF00";
+    color = "#8AD879";
   } else if (percentage >= 50) {
-    color = "orange";
+    color = "#FA9F42";
   } else {
-    color = "red";
+    color = "#F3533A";
   }
   const fillStyles = `
     .circle-wrap {
@@ -33,27 +33,31 @@ const CircleProgressBar = ({ percentage }) => {
       clip: rect(0px, 150px, 150px, 75px);
     }
 
-    .circle-wrap .inside-circle {
-      width: 122px;
-      height: 122px;
-      border-radius: 50%;
-      background: #f7f6e8;
-      line-height: 120px;
-      text-align: center;
-      margin-top: 14px;
-      margin-left: 14px;
-      color: ${color};
-      position: absolute;
-      z-index: 100;
-      font-weight: 700;
-      font-size: 2em;
-    }
+   .circle-wrap .inside-circle {
+  width: 122px;
+  height: 122px;
+  border-radius: 50%;
+  background: #f9f8fc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  line-height: 120px;
+  text-align: center;
+  margin-top: 14px;
+  margin-left: 14px;
+  color: ${color};
+  position: absolute;
+  z-index: 100;
+  font-weight: 700;
+  font-size: 2em;
+}
 
-    /* color animation */
-    /* 3rd progress bar */
+
+   
     .mask .fill {
       clip: rect(0px, 75px, 150px, 0px);
       background-color: ${color};
+
     }
 
     .mask.full,
@@ -125,13 +129,13 @@ export default async function ResultPage({ searchParams }) {
 
   return (
     <main className="  items-center justify-center my-6 ">
-      <form action="" className=" flex justify-center my-6">
+      <form action="" className=" gap-2 flex justify-center my-6">
         <input
           type="url"
           name="url"
           id="url"
           placeholder={data.url}
-          className="border border-gray-300 rounded-3xl  px-3 py-2 w-64 text-brand-orange-70 placeholder-orange-70 focus:outline-none focus:border-orange-500 pl-8"
+          className="block w-full px-5 py-3 text-base text-gray-900 placeholder-gray-500 transition-colors border  border-blue-200 rounded-2xl shadow-sm disabled:bg-gray-200 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-blue-600"
           style={{
             backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" d="M11.445 0.055l-8.945 8.945-2.5 7 6.995-2.5 8.95-8.945c0.5-2-2.5-5-4.5-4.5zM4.5 11l-1-1 8.5-8.5 1 1-8.5 8.5z"></path></svg>')`,
             backgroundRepeat: "no-repeat",
@@ -143,30 +147,30 @@ export default async function ResultPage({ searchParams }) {
         />
       </form>
 
-      <h1 className="text-brand-orange-70 font-libreBaskerville text-2xl text-center">Accessibility Report for {data.url}</h1>
+      <h1 className="mb-6 text-2xl font-extrabold leading-none tracking-tight text-center">Accessibility Report for {data.url}</h1>
 
-      <div className="flex py-0 mb-3  rounded-3xl items-center mx-8 flex-wrap justify-center p-8">
+      <div className="flex py-0 mb-4 shadow-glass-1 bg-white bg-opacity-30 rounded-3xl items-center mx-12 flex-wrap justify-center p-8">
         <Image alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} className="w-full md:w-1/2 xl:w-[420px]" sizes="" />
         <CircleProgressBar percentage={score} />
         <div className="place-self-center">
-          <p className="text-brand-orange-70 font-poppins">{data.description}</p>
-          <p className="text-brand-orange-70 font-poppins">Accessibility Breaches: {violationsCount}</p>
-          <p className="text-brand-orange-70 font-poppins">Incomplete Items Detected: {incompleteCount}</p>
-          <p className="text-brand-orange-70 font-poppins">Assessed Tags: {data.tags.join(", ")}</p>
+          <p className="mb-1 text-xl font-extrabold leading-none tracking-tight text-center font-poppins">{data.description}</p>
+          <p className="mb-1 text-xl font-extrabold leading-none tracking-tight font-poppins">Accessibility Breaches: {violationsCount}</p>
+          <p className="mb-1 text-xl font-extrabold leading-none tracking-tight font-poppins">Incomplete Items Detected: {incompleteCount}</p>
+          <p className="mb-1 text-xl font-extrabold leading-none tracking-tight font-poppins">Assessed Tags: {data.tags.join(", ")}</p>
         </div>
       </div>
-
-      <div className="flex flex-col justify-center items-center">
+      <h2 className="my-10 text-5xl font-extrabold leading-none text-center ">Check out how bad your site!</h2>
+      <div className="flex flex-row gap-3 flex-wrap justify-center items-center">
         {violations.map((violation, index) => (
-          <div key={index} className="border border-gray-300 p-4 my-4 rounded-md w-10/12">
-            <h2 className="text-xl font-semibold text-gray-800">{violation.id}</h2>
-            <p className="text-gray-600">{violation.description}</p>
+          <div key={index} className="shadow-glass-1   p-4 my-4 rounded-md xl:w-2/5 bg-white bg-opacity-20">
+            <h2 className="mb-2 text-3xl font-extrabold leading-none ">{violation.id}</h2>
+            <p className=" mx-auto text-xl font-normal leading-7 font-poppins">{violation.description}</p>
 
-            <p className="text-gray-600">Impact: {violation.impact}</p>
-            <p className="text-gray-600">Tags: {violation.tags.join(", ")}</p>
+            <p className="mx-auto text-xl font-normal leading-7 font-poppins">Impact: {violation.impact}</p>
+            <p className="mx-auto text-xl font-normal leading-7 font-poppins">Tags: {violation.tags.join(", ")}</p>
 
-            <div className="mt-2">
-              <Link className="inline-block px-4 py-1 bg-orange-500 text-white rounded-md hover:bg-orange-600" href={`/rules/${violation.id}`}>
+            <div className="my-2 mt-4">
+              <Link className="w-full px-5 py-3 text-base font-medium text-white transition-colors bg-blue-500 border border-transparent rounded-md shadow disabled:bg-blue-400 sm:w-48 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 sm:px-10" href={`/rules/${violation.id}`}>
                 Read More
               </Link>
             </div>

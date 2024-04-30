@@ -37,8 +37,12 @@ module.exports = {
         "glass-1": "0 8px 32px rgba(31, 38, 117, 0.36)",
       },
       backgroundImage: (theme) => ({
-        "custom-image": "url('/background.jpg')", // Replace 'background.jpg' with your image path
+        "custom-image": "url('/background.jpg')",
+        "grid-svg": "url(https://play.tailwindcss.com/img/grid.svg)",
       }),
+      maskImage: {
+        "linear-white-gradient": "linear-gradient(180deg, white, rgba(255,255,255,1))",
+      }, // Replace 'background.jpg' with your image path
     },
   },
   plugins: [],

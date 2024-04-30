@@ -22,40 +22,40 @@ export default async function ResultPage({ searchParams }) {
           <h1>REGLER</h1>
           <h2>Oversigt over de regler der testes for</h2>
           <ol className="border border-gray-300 p-4">
-            <li className="text-blue-500 border border-gray-300 p-2">
+            <li className="mb-2 text-2xl font-extrabold leading-none  p-6 rounded-xl">
               <Link href="rules/landmark-no-duplicate-banner">landmark-no-duplicate-banner</Link>
             </li>
-            <li>
+            <li className="mb-2 text-2xl font-extrabold leading-none  p-6 rounded-xl">
               <Link href="rules/landmark-complementary-is-top-level">landmark-complementary-is-top-level</Link>
             </li>
-            <li>
+            <li className="mb-2 text-2xl font-extrabold leading-none  p-6 rounded-xl">
               <Link href="rules/label-title-only">label-title-only</Link>
             </li>
-            <li>
+            <li className="mb-2 text-2xl font-extrabold leading-none  p-6 rounded-xl">
               <Link href="rules/aria-dialog-name">aria-dialog-name</Link>
             </li>
-            <li>
+            <li className="mb-2 text-2xl font-extrabold leading-none  p-6 rounded-xl">
               <Link href="rules/landmark-unique">landmark-unique</Link>
             </li>
-            <li>
+            <li className="mb-2 text-2xl font-extrabold leading-none  p-6 rounded-xl">
               <Link href="rules/image-redundant-alt">image-redundant-alt</Link>
             </li>
-            <li>
+            <li className="mb-2 text-2xl font-extrabold leading-none  p-6 rounded-xl">
               <Link href="rules/page-has-heading-one">page-has-heading-one</Link>
             </li>
-            <li>
+            <li className="mb-2 text-2xl font-extrabold leading-none  p-6 rounded-xl">
               <Link href="rules/heading-order">heading-order</Link>
             </li>
-            <li>
+            <li className="mb-2 text-2xl font-extrabold leading-none  p-6 rounded-xl">
               <Link href="rules/empty-heading">empty-heading</Link>
             </li>
-            <li>
+            <li className="mb-2 text-2xl font-extrabold leading-none  p-6 rounded-xl">
               <Link href="rules/region">region</Link>
             </li>
-            <li>
+            <li className="mb-2 text-2xl font-extrabold leading-none  p-6 rounded-xl">
               <Link href="rules/tabindex">tabindex</Link>
             </li>
-            <li>
+            <li className="mb-2 text-2xl font-extrabold leading-none  p-6 rounded-xl">
               <Link href="rules/landmark-one-main">landmark-one-main</Link>
             </li>
           </ol>
