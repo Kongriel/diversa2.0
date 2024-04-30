@@ -24,10 +24,9 @@ module.exports = {
         "grey-60": "#666666",
         "grey-80": "#333333",
         "grey-100": "#000000",
-        "bg-farve": "#1b2dc8" /*blå*/,
-        "bg-kontrast": "#ffc66b",
+        "farve-text": "#1b2dc8" /*blå*/,
+        "farve-1": "#ffc66b",
 
-        "farve-1": "#123456",
         "farve-2": "#abcdef",
         "farve-3": "#fedcba",
       },
