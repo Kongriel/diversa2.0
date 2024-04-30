@@ -4,11 +4,9 @@ module.exports = {
   theme: {
     extend: {
       spacing: {
-        // Define flow spacing values here
         "flow-1": "0.8rem", // Adjust as needed
         "flow-2": "1.2rem", // Adjust as needed
         "flow-3": "4.8rem", // Adjust as needed
-        // Add more flow spacing values as needed
       },
       colors: {
         // Define your custom colors here
@@ -26,6 +24,7 @@ module.exports = {
         "grey-60": "#666666",
         "grey-80": "#333333",
         "grey-100": "#000000",
+        "bg-farve": "#1b2dc8" /*blå*/,
 
         "farve-1": "#123456",
         "farve-2": "#abcdef",
