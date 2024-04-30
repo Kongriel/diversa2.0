@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html className="bg-brand-beige-10" lang="en">
+    <html className="bg-farve-1" lang="en">
       <body style={{ fontFamily: "Poppins, sans-serif" }}>
         <Header />
         {children}

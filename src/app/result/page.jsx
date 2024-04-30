@@ -124,7 +124,7 @@ export default async function ResultPage({ searchParams }) {
   score = Math.max(score, 0);
 
   return (
-    <main className="bg-brand-beige-10  items-center justify-center my-6 ">
+    <main className="bg-farve-1  items-center justify-center my-6 ">
       <form action="" className=" flex justify-center my-6">
         <input
           type="url"
