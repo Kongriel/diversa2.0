@@ -10,7 +10,7 @@ export default async function ResultPage({ searchParams }) {
   const data = await response.json();
   console.log(response);
 
-  // Convert the rules object into an array of objects
+  //JSON to array
   const rulesList = Object.entries(rulesData).map(([slug, rule]) => ({
     slug,
     name: rule.headline
@@ -23,7 +23,6 @@ export default async function ResultPage({ searchParams }) {
           <h1>REGLER</h1>
           <h2>Oversigt over de regler der testes for</h2>
           <ol className="border border-gray-300 p-4">
-            {/* Map through rulesList to display each rule */}
             {rulesList.map((rule, index) => (
               <li key={index} className="mb-2 text-2xl font-extrabold leading-none  p-6 rounded-xl">
                 <Link href={`rules/${rule.slug}`}>{rule.name}</Link>
