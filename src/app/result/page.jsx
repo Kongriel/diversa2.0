@@ -174,24 +174,22 @@ export default async function ResultPage({ searchParams }) {
         </div>
       </div>
       <h2 className="my-10 text-5xl font-extrabold leading-none text-center ">Check out how bad your site!</h2>
-      <div className="flex w-[800px] ml-12  gap-6 flex-wrap justify-center items-center">
+      <div className="flex flex-wrap justify-center gap-6 mx-4 sm:mx-12">
         {violations.map((violation, index) => (
-          <div key={index} className="p-8 bg-white shadow-glass-1 hover:shadow-lg rounded-2xl">
-            <div className="flex items-center justify-between">
-              <div className="flex gap-5 items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 rounded-2xl p-3 " viewBox="0 0 24 24" stroke={getColorByImpact(violation.impact)} color={getColorByImpact(violation.impact)} fill="none">
+          <div key={index} className="w-8/12 sm:w-[calc(50% - 16px)] md:w-[calc(33.33% - 16px)] lg:w-[calc(25% - 16px)]">
+            <div className="p-8 bg-white shadow-glass-1 hover:shadow-lg rounded-2xl">
+              <div className="flex flex-col sm:flex-row items-center justify-between">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 rounded-2xl p-3" viewBox="0 0 24 24" stroke={getColorByImpact(violation.impact)} fill="none">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-
-                <div className="flex gap-1 flex-col ml-3">
-                  <h2 className="mb-2 text-3xl font-extrabold leading-none ">{violation.id}</h2>
-                  <p className="text-xl font-normal leading-7 font-poppins overflow-hidden overflow-ellipsis" style={{ maxWidth: "30rem" }}>
+                <div className="flex flex-col  ml-3">
+                  <h2 className="mb-2 text-3xl  font-extrabold leading-none ">{violation.id}</h2>
+                  <p className="text-xl font-normal leading-7 font-poppins" style={{ maxWidth: "30rem" }}>
                     {violation.description}
                   </p>
-
                   <p className="text-xl font-normal leading-7 font-poppins">Impact: {violation.impact}</p>
                 </div>
-                <button className="ml-6 px-5 py-3 text-base font-medium text-white transition-colors bg-blue-500 border border-transparent rounded-md shadow disabled:bg-blue-400 sm:w-48 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 sm:px-10">
+                <button className="mt-4 sm:mt-0 sm:ml-6 px-5 py-3 text-base font-medium text-white transition-colors bg-blue-500 border border-transparent rounded-md shadow disabled:bg-blue-400 sm:w-auto sm:px-10">
                   <Link href={`/rules/${violation.id}`}>Read More</Link>
                 </button>
               </div>
