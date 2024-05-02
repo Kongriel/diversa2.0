@@ -197,6 +197,7 @@ export default async function ResultPage({ searchParams }) {
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 rounded-2xl p-3 md:p-2 -ml-4 md:ml-0 md:mb-0 mb-1" viewBox="0 0 24 24" stroke={getColorByImpact(violation.impact)} fill="none">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
+
                 <div className="flex flex-col">
                   <h2 className="mb-2 text-2xl font-extrabold leading-none ">{violation.id}</h2>
                   <p className="text-xl font-normal mb-1 leading-7 font-poppins" style={{ maxWidth: "32rem" }}>

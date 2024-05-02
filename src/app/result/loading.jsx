@@ -14,11 +14,11 @@ export default function Loading() {
         </form>
 
         <h1 className="mb-6 text-4xl font-extrabold leading-none tracking-tight text-center">
-          <Skeleton className="shadow-glass-1" width={600} height={60} />
+          <Skeleton className="shadow-glass-1" width={600} height={55} />
         </h1>
 
         <div className="flex py-0 shadow-glass-1 bg-white bg-opacity-60 rounded-3xl items-center mx-12 flex-wrap gap-20 justify-between p-8 skeleton-loading">
-          <div className="rounded-lg overflow-hidden" style={{ width: "420px", height: "320px" }}>
+          <div className="rounded-lg overflow-hidden" style={{ width: "420px", height: "420px" }}>
             <Skeleton className="w-full h-full" />
           </div>
 
@@ -31,7 +31,7 @@ export default function Loading() {
           </div>
 
           <div className="rounded-full overflow-hidden" style={{ width: "150px", height: "150px" }}>
-            <Skeleton className="w-full h-full" circle />
+            <Skeleton height={500} />
           </div>
         </div>
       </main>
