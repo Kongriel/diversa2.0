@@ -166,10 +166,11 @@ export default async function ResultPage({ searchParams }) {
         <Image alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} className="w-full md:w-1/2 xl:w-[420px]" sizes="" />
         <CircleProgressBar percentage={score} />
         <div className="place-self-center">
-          <p className="mb-1 text-xl font-extrabold leading-none tracking-tight text-center font-poppins">{data.description}</p>
-          <p className="mb-1 text-xl font-extrabold leading-none tracking-tight font-poppins">Accessibility Breaches: {violationsCount}</p>
-          <p className="mb-1 text-xl font-extrabold leading-none tracking-tight font-poppins">Incomplete Items Detected: {incompleteCount}</p>
-          <p className="mb-1 text-xl font-extrabold leading-none tracking-tight font-poppins">Assessed Tags: {data.tags.join(", ")}</p>
+          <p className="mb-1 text-xl font-bold leading-none tracking-tight text-center font-poppins">{data.description}</p>
+          <p className="mb-1 text-xl font-bold leading-none tracking-tight text-center font-poppins">{data.description}</p>
+          <p className="mb-1 text-xl font-bold leading-none tracking-tight font-poppins">Accessibility breaches: {violationsCount}</p>
+          <p className="mb-1 text-xl font-bold leading-none tracking-tight font-poppins">Incomplete items detected: {incompleteCount}</p>
+          <p className="mb-1 text-xl font-bold leading-none tracking-tight font-poppins">Assessed tags: {data.tags.join(", ")}</p>
         </div>
       </div>
       <h2 className="my-10 text-5xl font-extrabold leading-none text-center ">Check out how bad your site!</h2>
