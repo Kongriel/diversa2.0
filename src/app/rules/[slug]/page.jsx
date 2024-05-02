@@ -43,7 +43,7 @@ export default function RulePage({ params }) {
           <h4 className="text-2xl my-2 font-libreBaskerville ">Rule Description</h4>
           <p className="my-1 font-poppins"> {notes}</p>
           <Link href="./" className="text-1xl my-5 underline font-poppins">
-            ....Tilbage til regler
+            ....Go back
           </Link>
         </div>
       </div>
