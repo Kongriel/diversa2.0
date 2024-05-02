@@ -40,11 +40,18 @@ export default function RulePage({ params }) {
           <h1 className="text-4xl my-4 font-libreBaskerville">{headline}</h1>
           <h4 className="text-2xl my-2 font-libreBaskerville">Explanation</h4>
           <p className="my-1 font-poppins">{explanation}</p>
-          <h4 className="text-2xl my-2 font-libreBaskerville ">Rule Description</h4>
+          <h4 className="text-2xl my-2 font-libreBaskerville ">
+            Rule Description
+          </h4>
           <p className="my-1 font-poppins"> {notes}</p>
-          <Link href="./" className="text-1xl my-5 underline font-poppins">
-            ....Go back
-          </Link>
+          <div className="flex flex-col">
+            <Link href="./" className="text-1xl my-5 underline font-poppins">
+              ....Go back
+            </Link>
+            <Link href="./" className="text-1xl my-5 underline font-poppins">
+              Home
+            </Link>
+          </div>
         </div>
       </div>
     </main>
