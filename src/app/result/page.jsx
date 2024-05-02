@@ -191,7 +191,9 @@ export default async function ResultPage({ searchParams }) {
 
                   <p className="text-xl font-normal leading-7 font-poppins">Impact: {violation.impact}</p>
                 </div>
-                <button className=" ml-6 px-5 py-3 text-base font-medium text-white transition-colors bg-blue-500 border border-transparent rounded-md shadow disabled:bg-blue-400 sm:w-48 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 sm:px-10 ">Read More</button>
+                <button className="ml-6 px-5 py-3 text-base font-medium text-white transition-colors bg-blue-500 border border-transparent rounded-md shadow disabled:bg-blue-400 sm:w-48 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 sm:px-10">
+                  <Link href={`/rules/${violation.id}`}>Read More</Link>
+                </button>
               </div>
             </div>
           </div>
