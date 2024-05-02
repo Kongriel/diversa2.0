@@ -34,15 +34,13 @@ export default function RulePage({ params }) {
   const { headline, explanation, notes } = oneRule;
 
   return (
-    <main>
+    <main className="">
       <div>
-        <div className="mx-4 ">
+        <div className="mx-4 h-full">
           <h1 className="text-4xl my-4 font-libreBaskerville">{headline}</h1>
           <h4 className="text-2xl my-2 font-libreBaskerville">Explanation</h4>
           <p className="my-1 font-poppins">{explanation}</p>
-          <h4 className="text-2xl my-2 font-libreBaskerville ">
-            Rule Description
-          </h4>
+          <h4 className="text-2xl my-2 font-libreBaskerville ">Rule Description</h4>
           <p className="my-1 font-poppins"> {notes}</p>
           <div className="flex flex-col">
             <Link href="./" className="text-1xl my-5 underline font-poppins">
