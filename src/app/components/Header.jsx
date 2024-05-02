@@ -8,7 +8,7 @@ function Header() {
       <ul className="flex justify-between items-center">
         <li className="p-3">
           <Link href={"/"}>
-            <Image src="/public/diversa.svg" alt="Diversa Logo" width={150} height={75} />
+            <Image src="/diversa.svg" alt="Diversa Logo" width={150} height={75} />
           </Link>
         </li>
         <li className=" text-xl pr-5">
