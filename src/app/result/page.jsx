@@ -110,8 +110,6 @@ const CircleProgressBar = ({ percentage }) => {
   );
 };
 
-export const revalidate = 1200;
-
 export default async function ResultPage({ searchParams }) {
   const params = new URLSearchParams(searchParams);
   const response = await fetch(`https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}`);
