@@ -173,7 +173,7 @@ export default async function ResultPage({ searchParams }) {
           <p className="mb-1 text-xl font-bold leading-none tracking-tight font-poppins">Assessed tags: {data.tags.join(", ")}</p>
         </div>
       </div>
-      <h2 className="my-10 text-5xl font-extrabold leading-none text-center ">Check out how bad your site!</h2>
+      <h2 className="my-10 text-5xl font-extrabold leading-none text-center ">Check out what you can improve</h2>
       <div className="flex flex-wrap justify-center gap-6 mx-4 sm:mx-12">
         {violations.map((violation, index) => (
           <div key={index} className="w-8/12 sm:w-[calc(50% - 16px)] md:w-[calc(33.33% - 16px)] lg:w-[calc(25% - 16px)]">
