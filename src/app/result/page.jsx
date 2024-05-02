@@ -177,7 +177,6 @@ export default async function ResultPage({ searchParams }) {
 
         <CircleProgressBar percentage={score} />
       </div>
-
       <h2 className="my-10 text-5xl font-extrabold leading-none text-center ">Check out how bad your site!</h2>
       <div className="flex flex-wrap justify-center gap-6 mx-4 sm:mx-12">
         {violations.map((violation, index) => (
