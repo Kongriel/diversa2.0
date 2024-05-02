@@ -2,8 +2,6 @@ import React from "react";
 import Link from "next/link";
 import rulesData from "./json/rules.json";
 
-export const revalidate = 1200;
-
 export default async function ResultPage({ searchParams }) {
   const params = new URLSearchParams(searchParams);
   const response = await fetch("https://mmd-a11y-api.vercel.app/api/scan?${params.toString()}");
@@ -26,7 +24,7 @@ export default async function ResultPage({ searchParams }) {
             {rulesList.map((rule, index) => (
               <li
                 key={index}
-                className="p-8 bg-white shadow-glass-1 hover:shadow-lg rounded-2xl mb-5 flex justify-between items-center sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl"
+                className="p-8 bg-white shadow-glass-1 hover:shadow-md rounded-2xl mb-5 flex justify-between items-center sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl"
                 style={{ width: "100%", maxWidth: "40rem" }} // Adjust the max-width as needed
               >
                 <p className="flex-grow text-2xl font-poppins ">{rule.name}</p>

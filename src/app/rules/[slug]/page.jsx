@@ -36,21 +36,20 @@ export default function RulePage({ params }) {
   return (
     <main className="">
       <div>
-        <div className="mx-4 h-full">
-          <h1 className="text-4xl my-4 font-libreBaskerville">{headline}</h1>
-          <h4 className="text-2xl my-2 font-libreBaskerville">Explanation</h4>
-          <p className="my-1 font-poppins">{explanation}</p>
-          <h4 className="text-2xl my-2 font-libreBaskerville ">Rule Description</h4>
-          <p className="my-1 font-poppins"> {notes}</p>
-          <div className="flex flex-col">
+        <div className="mx-4 my-2 p-8 w-10/12 h-screen">
+          <h1 className="text-4xl my-4 ">{headline}</h1>
+          <h4 className="text-3xl my-2 ">Explanation</h4>
+          <p className="my-1 text-xl font-poppins">{explanation}</p>
+          <h4 className="text-3xl my-2 ">Rule Description</h4>
+          <p className="my-1 text-xl font-poppins"> {notes}</p>
+          <div className="flex gap-5">
             <Link href="./" className="text-1xl my-5 underline font-poppins">
               See all rules
             </Link>
-            <div className="flex justify-center m-4">
-              <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow justify-center">
-                <Link href="/">Home</Link>
-              </button>
-            </div>
+
+            <button className="text-1xl my-5 underline font-poppins">
+              <Link href="/">Home</Link>
+            </button>
           </div>
         </div>
       </div>
