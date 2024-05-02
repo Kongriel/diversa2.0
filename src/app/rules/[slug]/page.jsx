@@ -46,9 +46,9 @@ export default function RulePage({ params }) {
           <p className="my-1 font-poppins"> {notes}</p>
           <div className="flex flex-col">
             <Link href="./" className="text-1xl my-5 underline font-poppins">
-              ....Go back
+              See all rules
             </Link>
-            <Link href="./" className="text-1xl my-5 underline font-poppins">
+            <Link href="/" className="text-1xl my-5 underline font-poppins">
               Home
             </Link>
           </div>

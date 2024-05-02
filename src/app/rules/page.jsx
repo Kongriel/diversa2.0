@@ -28,11 +28,11 @@ export default async function ResultPage({ searchParams }) {
           <h2 className="justify-center mx-auto mb-5 text-xl font-normal leading-7 text-center  font-poppins">
             Overview of the rules being tested
           </h2>
-          <ol className="border border-gray-300 p-4">
+          <ol className="p-4">
             {rulesList.map((rule, index) => (
               <li
                 key={index}
-                className="p-8 bg-white shadow-glass-1 hover:shadow-lg rounded-2xl mb-5 flex justify-between"
+                className="p-8 bg-white shadow-glass-1 hover:shadow-lg rounded-2xl mb-5 flex justify-between items-center	"
               >
                 <p className="">{rule.name}</p>
                 <Link

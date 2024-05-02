@@ -164,10 +164,9 @@ export default async function ResultPage({ searchParams }) {
 
       <h1 className="mb-6 text-4xl font-extrabold leading-none tracking-tight text-center">Accessibility Report for {data.url}</h1>
 
-      <div className="flex py-0 shadow-glass-1 bg-white bg-opacity-60 rounded-3xl items-center mx-12 flex-wrap gap-20 justify-between p-8">
-        <Image alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} className="w-full md:w-1/2 xl:w-[420px]" sizes="" />
-
-        <div className="flex flex-col justify-between">
+      <div className="flex shadow-glass-1 bg-white bg-opacity-60 rounded-3xl items-center mx-12 flex-wrap sm:gap-20 justify-between p-8">
+        <Image alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} className="w-full md:w-1/2 xl:w-[420px] md:mt-0 mt-5" sizes="" />
+        <div className="flex flex-col justify-between md:mt-0 mt-10 md:mb-0 -mb-20">
           <p className="mb-1 text-xl font-bold leading-none tracking-tight text-center font-poppins">{data.description}</p>
           <p className="mb-1 text-xl font-bold leading-none tracking-tight text-center font-poppins">{data.description}</p>
           <p className="mb-1 text-xl font-bold leading-none tracking-tight font-poppins">Accessibility breaches: {violationsCount}</p>
@@ -193,6 +192,7 @@ export default async function ResultPage({ searchParams }) {
                   </p>
                   <p className="text-xl font-normal leading-7 font-poppins">Impact: {violation.impact}</p>
                 </div>
+
                 <button className="mt-4 sm:mt-0 sm:ml-6 px-5 py-3 text-base font-medium text-white transition-colors bg-blue-500 border border-transparent rounded-md shadow disabled:bg-blue-400 sm:w-auto sm:px-10">
                   <Link href={`/rules/${violation.id}`}>Read More</Link>
                 </button>
