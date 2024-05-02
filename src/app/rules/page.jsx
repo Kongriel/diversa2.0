@@ -32,9 +32,15 @@ export default async function ResultPage({ searchParams }) {
             {rulesList.map((rule, index) => (
               <li
                 key={index}
-                className="mb-2 text-2xl font-extrabold leading-none  p-6 rounded-xl"
+                className="p-8 bg-white shadow-glass-1 hover:shadow-lg rounded-2xl mb-5 flex justify-between"
               >
-                <Link href={`rules/${rule.slug}`}>{rule.name}</Link>
+                <p className="">{rule.name}</p>
+                <Link
+                  href={`rules/${rule.slug}`}
+                  className="mt-4 sm:mt-0 sm:ml-6 px-5 py-3 text-base font-medium text-white transition-colors bg-blue-500 border border-transparent rounded-md shadow disabled:bg-blue-400 sm:w-auto sm:px-10 w-fit"
+                >
+                  Read more
+                </Link>
               </li>
             ))}
           </ol>
