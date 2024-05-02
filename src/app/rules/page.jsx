@@ -37,7 +37,7 @@ export default async function ResultPage({ searchParams }) {
                 <p className="">{rule.name}</p>
                 <Link
                   href={`rules/${rule.slug}`}
-                  className="mt-4 sm:mt-0 sm:ml-6 px-5 py-3 text-base font-medium text-white transition-colors bg-blue-500 border border-transparent rounded-md shadow disabled:bg-blue-400 sm:w-auto sm:px-10 w-fit"
+                  className="mt-4 sm:mt-0 sm:ml-6 px-5 py-3 text-base font-medium text-white transition-colors bg-blue-500 border border-transparent rounded-md shadow disabled:bg-blue-400 sm:w-auto sm:px-10 w-fit whitespace-nowrap"
                 >
                   Read more
                 </Link>
