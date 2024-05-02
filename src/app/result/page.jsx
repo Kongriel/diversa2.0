@@ -181,7 +181,7 @@ export default async function ResultPage({ searchParams }) {
       <div className="flex flex-wrap justify-center gap-6 mx-4 sm:mx-12">
         {violations.map((violation, index) => (
           <div key={index} className="w-8/12 sm:w-[calc(50% - 16px)] md:w-[calc(33.33% - 16px)] lg:w-[calc(25% - 16px)]">
-            <div className="p-8 bg-white shadow-glass-1 rounded-2xl">
+            <div className="p-8 bg-white shadow-glass-1 rounded-2xl m-4">
               <div className="flex flex-col sm:flex-row items-center justify-between">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 rounded-2xl p-3" viewBox="0 0 24 24" stroke={getColorByImpact(violation.impact)} fill="none">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
