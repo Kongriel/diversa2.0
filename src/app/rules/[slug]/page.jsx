@@ -48,9 +48,11 @@ export default function RulePage({ params }) {
             <Link href="./" className="text-1xl my-5 underline font-poppins">
               See all rules
             </Link>
-            <Link href="/" className="text-1xl my-5 underline font-poppins">
-              Home
-            </Link>
+            <div className="flex justify-center m-4">
+              <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow justify-center">
+                <Link href="/">Home</Link>
+              </button>
+            </div>
           </div>
         </div>
       </div>
