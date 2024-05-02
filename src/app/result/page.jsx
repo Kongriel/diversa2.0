@@ -2,6 +2,19 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+const getColorByImpact = (impact) => {
+  switch (impact) {
+    case "moderate":
+      return "#FA9F42";
+    case "serious":
+      return "#F3533A";
+    case "critical":
+      return "#8B0000";
+    default:
+      return "#000000";
+  }
+};
+
 const CircleProgressBar = ({ percentage }) => {
   const fillDegree = (percentage / 100) * 180;
   let color;
@@ -160,19 +173,25 @@ export default async function ResultPage({ searchParams }) {
         </div>
       </div>
       <h2 className="my-10 text-5xl font-extrabold leading-none text-center ">Check out how bad your site!</h2>
-      <div className="flex flex-row gap-3 flex-wrap justify-center items-center">
+      <div className="flex w-[800px] ml-12  gap-6 flex-wrap justify-center items-center">
         {violations.map((violation, index) => (
-          <div key={index} className="shadow-glass-1   p-4 my-4 rounded-md xl:w-2/5 bg-white bg-opacity-20">
-            <h2 className="mb-2 text-3xl font-extrabold leading-none ">{violation.id}</h2>
-            <p className=" mx-auto text-xl font-normal leading-7 font-poppins">{violation.description}</p>
+          <div key={index} className="p-8 bg-white shadow-glass-1 hover:shadow-lg rounded-2xl">
+            <div className="flex items-center justify-between">
+              <div className="flex gap-5 items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 rounded-2xl p-3 " viewBox="0 0 24 24" stroke={getColorByImpact(violation.impact)} color={getColorByImpact(violation.impact)} fill="none">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
 
-            <p className="mx-auto text-xl font-normal leading-7 font-poppins">Impact: {violation.impact}</p>
-            <p className="mx-auto text-xl font-normal leading-7 font-poppins">Tags: {violation.tags.join(", ")}</p>
+                <div className="flex gap-1 flex-col ml-3">
+                  <h2 className="mb-2 text-3xl font-extrabold leading-none ">{violation.id}</h2>
+                  <p className="text-xl font-normal leading-7 font-poppins overflow-hidden overflow-ellipsis" style={{ maxWidth: "30rem" }}>
+                    {violation.description}
+                  </p>
 
-            <div className="my-2 mt-4">
-              <Link className="w-full px-5 py-3 text-base font-medium text-white transition-colors bg-blue-500 border border-transparent rounded-md shadow disabled:bg-blue-400 sm:w-48 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 sm:px-10" href={`/rules/${violation.id}`}>
-                Read More
-              </Link>
+                  <p className="text-xl font-normal leading-7 font-poppins">Impact: {violation.impact}</p>
+                </div>
+                <button className=" ml-6 px-5 py-3 text-base font-medium text-white transition-colors bg-blue-500 border border-transparent rounded-md shadow disabled:bg-blue-400 sm:w-48 hover:bg-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-600 sm:px-10 ">Read More</button>
+              </div>
             </div>
           </div>
         ))}
