@@ -191,7 +191,7 @@ export default async function ResultPage({ searchParams }) {
       <h2 className="my-10 text-5xl font-extrabold leading-none text-center ">Check out what to improve</h2>
       <div className="flex flex-wrap justify-center gap-2 -mx-10 sm:mx-12">
         {violations.map((violation, index) => (
-          <div key={index} className="w-8/12 sm:w-[calc(50% - 16px)] md:w-[calc(33.33% - 16px)] lg:w-[calc(25% - 16px)]">
+          <div key={index} className=" w-8/12 sm:w-[calc(50% - 16px)] md:w-[calc(33.33% - 16px)] lg:w-[calc(25% - 16px)]">
             <div className="p-8 bg-white shadow-glass-1 rounded-2xl m-4">
               <div className="flex flex-col sm:flex-row md:items-center items-left justify-between">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 rounded-2xl p-3 md:p-2 -ml-4 md:ml-0 md:mb-0 mb-1" viewBox="0 0 24 24" stroke={getColorByImpact(violation.impact)} fill="none">
@@ -200,7 +200,7 @@ export default async function ResultPage({ searchParams }) {
 
                 <div className="flex flex-col">
                   <h2 className="mb-2 text-2xl font-extrabold leading-none ">{violation.id}</h2>
-                  <p className="text-xl font-normal mb-1 leading-7 font-poppins" style={{ maxWidth: "32rem" }}>
+                  <p className="text-xl font-normal mb-1 leading-7  font-poppins" style={{ maxWidth: "32rem" }}>
                     {violation.description}
                   </p>
                   <p className="text-xl font-normal leading-7 font-poppins">
