@@ -22,8 +22,12 @@ export default async function ResultPage({ searchParams }) {
     <main>
       <div>
         <div>
-          <h1>Rules</h1>
-          <h2>Overview of the rules being tested</h2>
+          <h1 className="mt-5 mb-6 text-6xl font-extrabold leading-none tracking-tight text-center">
+            Rules
+          </h1>
+          <h2 className="justify-center mx-auto mb-5 text-xl font-normal leading-7 text-center  font-poppins">
+            Overview of the rules being tested
+          </h2>
           <ol className="border border-gray-300 p-4">
             {rulesList.map((rule, index) => (
               <li
@@ -36,7 +40,7 @@ export default async function ResultPage({ searchParams }) {
           </ol>
 
           <button>
-            <Link href="/">Search</Link>
+            <Link href="/">Home</Link>
           </button>
         </div>
       </div>
