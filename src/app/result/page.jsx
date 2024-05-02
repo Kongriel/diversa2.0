@@ -4,6 +4,8 @@ import Image from "next/image";
 
 const getColorByImpact = (impact) => {
   switch (impact) {
+    case "minor":
+      return "green";
     case "moderate":
       return "#FA9F42";
     case "serious":
@@ -160,30 +162,33 @@ export default async function ResultPage({ searchParams }) {
         />
       </form>
 
-      <h1 className="mb-6 text-2xl font-extrabold leading-none tracking-tight text-center">Accessibility Report for {data.url}</h1>
+      <h1 className="mb-6 text-4xl font-extrabold leading-none tracking-tight text-center">Accessibility Report for {data.url}</h1>
 
-      <div className="flex py-0 mb-4 shadow-glass-1 bg-white bg-opacity-30 rounded-3xl items-center mx-12 flex-wrap justify-center p-8">
+      <div className="flex py-0 shadow-glass-1 bg-white bg-opacity-60 rounded-3xl items-center mx-12 flex-wrap gap-20 justify-between p-8">
         <Image alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} className="w-full md:w-1/2 xl:w-[420px]" sizes="" />
-        <CircleProgressBar percentage={score} />
-        <div className="place-self-center">
+
+        <div className="flex flex-col justify-between">
           <p className="mb-1 text-xl font-bold leading-none tracking-tight text-center font-poppins">{data.description}</p>
           <p className="mb-1 text-xl font-bold leading-none tracking-tight text-center font-poppins">{data.description}</p>
           <p className="mb-1 text-xl font-bold leading-none tracking-tight font-poppins">Accessibility breaches: {violationsCount}</p>
           <p className="mb-1 text-xl font-bold leading-none tracking-tight font-poppins">Incomplete items detected: {incompleteCount}</p>
           <p className="mb-1 text-xl font-bold leading-none tracking-tight font-poppins">Assessed tags: {data.tags.join(", ")}</p>
         </div>
+
+        <CircleProgressBar percentage={score} />
       </div>
+
       <h2 className="my-10 text-5xl font-extrabold leading-none text-center ">Check out how bad your site!</h2>
       <div className="flex flex-wrap justify-center gap-6 mx-4 sm:mx-12">
         {violations.map((violation, index) => (
           <div key={index} className="w-8/12 sm:w-[calc(50% - 16px)] md:w-[calc(33.33% - 16px)] lg:w-[calc(25% - 16px)]">
-            <div className="p-8 bg-white shadow-glass-1 hover:shadow-lg rounded-2xl">
+            <div className="p-8 bg-white shadow-glass-1 rounded-2xl">
               <div className="flex flex-col sm:flex-row items-center justify-between">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 rounded-2xl p-3" viewBox="0 0 24 24" stroke={getColorByImpact(violation.impact)} fill="none">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <div className="flex flex-col  ml-3">
-                  <h2 className="mb-2 text-3xl  font-extrabold leading-none ">{violation.id}</h2>
+                <div className="flex flex-col">
+                  <h2 className="mb-2 text-2xl font-extrabold leading-none ">{violation.id}</h2>
                   <p className="text-xl font-normal leading-7 font-poppins" style={{ maxWidth: "30rem" }}>
                     {violation.description}
                   </p>
