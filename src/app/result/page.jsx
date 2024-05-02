@@ -166,35 +166,48 @@ export default async function ResultPage({ searchParams }) {
         />
       </form>
 
-      <h1 className="mb-6 text-4xl font-extrabold leading-none tracking-tight text-center">Accessibility Report for {data.url}</h1>
+      <h1 className="mb-6 text-4xl font-extrabold leading-none tracking-tight text-center">
+        Accessibility Report for <span className="text-4xl font-normal">{data.url}</span>
+      </h1>
 
-      <div className="flex shadow-glass-1 bg-white bg-opacity-60 rounded-3xl items-center mx-12 flex-wrap sm:gap-20 justify-between p-8">
+      <div className="flex shadow-glass-1 bg-white bg-opacity-60 rounded-3xl items-center mx-12 flex-wrap sm:gap-16 justify-between p-8">
         <Image alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} className="w-full md:w-1/2 xl:w-[420px] md:mt-0 mt-5" sizes="" />
         <div className="flex flex-col justify-between md:mt-0 mt-12 md:mb-0 -mb-9">
-          <p className="mb-1 text-xl font-bold leading-none tracking-tight text-center font-poppins">{data.description}</p>
-          <p className="mb-1 text-xl font-bold leading-none tracking-tight text-center font-poppins">{data.description}</p>
-          <p className="mb-1 text-xl font-bold leading-none tracking-tight font-poppins">Accessibility breaches: {violationsCount}</p>
-          <p className="mb-1 text-xl font-bold leading-none tracking-tight font-poppins">Incomplete items detected: {incompleteCount}</p>
-          <p className="mb-1 text-xl font-bold leading-none tracking-tight font-poppins">Assessed tags: {data.tags.join(", ")}</p>
+          <h2 className="mb-2 text-3xl font-bold leading-none tracking-tight  font-poppins">We found:</h2>
+          <p className="mb-2 text-xl font-bold leading-none tracking-tight font-poppins">{data.description}</p>
+
+          <p className="mb-2 text-2xl font-normal leading-none tracking-tight font-poppins">
+            <span className="text-3xl">{violationsCount} </span>Accessibility Breaches
+          </p>
+          <p className="mb-2 text-2xl font-normal leading-none tracking-tight font-poppins">
+            <span className="text-3xl">{incompleteCount} </span>Incompleted Items
+          </p>
+          <p className="mb-2 text-2xl font-normal leading-none tracking-tight font-poppins">
+            <span className="text-2xl">Tags Assesed: </span>
+            {data.tags.join(", ")}
+          </p>
         </div>
 
         <CircleProgressBar percentage={score} />
       </div>
       <h2 className="my-10 text-5xl font-extrabold leading-none text-center ">Check out what to improve</h2>
-      <div className="flex flex-wrap justify-center gap-2 mx-4 sm:mx-12">
+      <div className="flex flex-wrap justify-center gap-2 -mx-10 sm:mx-12">
         {violations.map((violation, index) => (
           <div key={index} className="w-8/12 sm:w-[calc(50% - 16px)] md:w-[calc(33.33% - 16px)] lg:w-[calc(25% - 16px)]">
             <div className="p-8 bg-white shadow-glass-1 rounded-2xl m-4">
-              <div className="flex flex-col sm:flex-row items-center justify-between">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 rounded-2xl p-3" viewBox="0 0 24 24" stroke={getColorByImpact(violation.impact)} fill="none">
+              <div className="flex flex-col sm:flex-row md:items-center items-left justify-between">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 rounded-2xl p-3 md:p-2 -ml-4 md:ml-0 md:mb-0 mb-1" viewBox="0 0 24 24" stroke={getColorByImpact(violation.impact)} fill="none">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <div className="flex flex-col">
                   <h2 className="mb-2 text-2xl font-extrabold leading-none ">{violation.id}</h2>
-                  <p className="text-xl font-normal leading-7 font-poppins" style={{ maxWidth: "30rem" }}>
+                  <p className="text-xl font-normal mb-1 leading-7 font-poppins" style={{ maxWidth: "32rem" }}>
                     {violation.description}
                   </p>
-                  <p className="text-xl font-normal leading-7 font-poppins">Impact: {violation.impact}</p>
+                  <p className="text-xl font-normal leading-7 font-poppins">
+                    <span className="font-bold">Impact: </span>
+                    {violation.impact}
+                  </p>
                 </div>
 
                 <button className="mt-4 sm:mt-0 sm:ml-6 px-5 py-3 text-base font-medium text-white transition-colors bg-blue-500 border border-transparent rounded-md shadow disabled:bg-blue-400 sm:w-auto sm:px-10">
