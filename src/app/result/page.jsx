@@ -119,6 +119,10 @@ export default async function ResultPage({ searchParams }) {
   console.log(response);
 
   const violations = data.violations;
+  violations.sort((a, b) => {
+    const impactOrder = { critical: 4, serious: 3, moderate: 2, minor: 1 };
+    return impactOrder[b.impact] - impactOrder[a.impact];
+  });
   const violationsCount = violations.length;
   const incompleteCount = data.incomplete.length;
 
@@ -166,7 +170,7 @@ export default async function ResultPage({ searchParams }) {
 
       <div className="flex shadow-glass-1 bg-white bg-opacity-60 rounded-3xl items-center mx-12 flex-wrap sm:gap-20 justify-between p-8">
         <Image alt={data.url} src={data.screenshot.url} width={data.screenshot.width} height={data.screenshot.height} className="w-full md:w-1/2 xl:w-[420px] md:mt-0 mt-5" sizes="" />
-        <div className="flex flex-col justify-between md:mt-0 mt-10 md:mb-0 -mb-20">
+        <div className="flex flex-col justify-between md:mt-0 mt-12 md:mb-0 -mb-9">
           <p className="mb-1 text-xl font-bold leading-none tracking-tight text-center font-poppins">{data.description}</p>
           <p className="mb-1 text-xl font-bold leading-none tracking-tight text-center font-poppins">{data.description}</p>
           <p className="mb-1 text-xl font-bold leading-none tracking-tight font-poppins">Accessibility breaches: {violationsCount}</p>
@@ -177,7 +181,7 @@ export default async function ResultPage({ searchParams }) {
         <CircleProgressBar percentage={score} />
       </div>
       <h2 className="my-10 text-5xl font-extrabold leading-none text-center ">Check out what to improve</h2>
-      <div className="flex flex-wrap justify-center gap-6 mx-4 sm:mx-12">
+      <div className="flex flex-wrap justify-center gap-2 mx-4 sm:mx-12">
         {violations.map((violation, index) => (
           <div key={index} className="w-8/12 sm:w-[calc(50% - 16px)] md:w-[calc(33.33% - 16px)] lg:w-[calc(25% - 16px)]">
             <div className="p-8 bg-white shadow-glass-1 rounded-2xl m-4">
