@@ -6,8 +6,8 @@ export default async function Page() {
   return (
     <main className="flex flex-col items-center justify-center h-screen">
       <div className="text-center px-4 py-10 mx-auto sm:w-3/4 lg:w-2/3 xl:w-2/5 sm:p-10 md:rounded">
-        <h1 className="mb-6 text-6xl font-extrabold leading-none tracking-tight text-center">Diversa Accessibility App</h1>
-        <h2 className="justify-center mx-auto text-xl font-normal leading-7 text-center  font-poppins">Ready to take the first step towards creating a more accessible web?</h2>
+        <h1 className="mb-6 text-6xl font-extrabold leading-none tracking-tight text-center">Website Accessibility</h1>
+        <h2 className="justify-center mx-auto text-xl font-normal leading-7 text-center  font-poppins">Submit a url to take the first step towards creating a more accessible web?</h2>
       </div>
 
       <div className=" px-6  mx-auto sm:w-3/4 lg:w-2/3 xl:w-2/5 sm:px-14 py-7 rounded-xl shadow-glass-1 bg-white bg-opacity-20 ">

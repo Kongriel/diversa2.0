@@ -20,7 +20,7 @@ const getColorByImpact = (impact) => {
 const CircleProgressBar = ({ percentage }) => {
   const fillDegree = (percentage / 100) * 180;
   let color;
-  if (percentage >= 89) {
+  if (percentage >= 85) {
     color = "#8AD879";
   } else if (percentage >= 50) {
     color = "#FA9F42";
